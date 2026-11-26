@@ -1,9 +1,11 @@
 import Count from './hooks/count.jsx'
 import './App.css'
+import Register from './hooks/Register.jsx'
 
 function App() {
   return (
     <div className="app-shell">
+      <Register />
       <header className="top-bar" aria-label="Page header" />
       <main className="demo-page">
         <Count />
