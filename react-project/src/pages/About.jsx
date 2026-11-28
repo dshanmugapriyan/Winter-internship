@@ -1,45 +1,22 @@
-import Students from "@/components/Students"
-import { Button } from "@/components/ui/button"
-import Count from "@/hooks/Count"
-import Register from "@/hooks/Register"
-import Users from "@/hooks/Users"
+import Parent from '@/components/ui/Parent'
+import Count from '../hooks/Count'
+import { StudentContext } from '@/StudentContext'
 
 const About = () => {
-    let name = 'test'
-    let age = 20
-
+    let StudentName = "Tharunika"
     return (
-        <>
-            <div>
-                <Count />
-            </div>
-            <Users />
-            <Register />
+        <div className="flex flex-col items-center gap-4 p-5">
 
-            <div className="flex flex-col items-center gap-4 p-4">
+            <h1>About Page</h1>
 
-                <Button variant="default">Default</Button>
+            <p>This is About Page</p>
 
-                <Button variant="destructive">Delete</Button>
+            <Count />
 
-                <Button variant="outline">Outline</Button>
-
-                <Button variant="secondary">Secondary</Button>
-
-                <Button variant="ghost">Ghost</Button>
-
-                <Count />
-
-                <h1>This is {name}</h1>
-
-                <p>Age: {age}</p>
-
-                <Students name={name} age={age} />
-
-                <Button>Click Me</Button>
-
-            </div>
-        </>
+            <StudentContext.Provider value={StudentName}>
+            <Parent />
+            </StudentContext.Provider>
+        </div>
     )
 }
 
